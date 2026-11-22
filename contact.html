@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Nur Adlin Auji</title>
+
+    <meta name="description"
+          content="Contact Nur Adlin Auji for software development internship opportunities, collaborations and professional connections.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CONTACT PAGE ONLY */
+
+        .contact-page {
+            padding: 100px 0 120px;
+        }
+
+        .contact-intro {
+            max-width: 760px;
+            margin: 0 auto 65px;
+            text-align: center;
+        }
+
+        .contact-intro h1 {
+            margin: 18px 0 22px;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.12;
+            letter-spacing: -3px;
+            font-weight: 800;
+        }
+
+        .contact-intro h1 span {
+            color: var(--primary);
+        }
+
+        .contact-intro p {
+            max-width: 590px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            min-height: 235px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            background: #ffffff;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            background: #eaf0ff;
+            color: var(--primary);
+            font-size: 23px;
+        }
+
+        .contact-card:nth-child(2) .contact-icon {
+            background: #f0e9ff;
+            color: #7950b8;
+        }
+
+        .contact-card:nth-child(3) .contact-icon {
+            background: #e4f7ed;
+            color: #23875a;
+        }
+
+        .contact-card h2 {
+            margin-bottom: 8px;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-card p {
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .availability-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 25px;
+            padding: 42px 48px;
+            border: 1px solid #dce6ff;
+            border-radius: 28px;
+            background: #eaf0ff;
+        }
+
+        .availability-card h2 {
+            margin: 12px 0;
+            font-size: 29px;
+            letter-spacing: -1px;
+        }
+
+        .availability-card p {
+            max-width: 560px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .availability-date {
+            display: inline-block;
+            margin-top: 17px;
+            padding: 9px 15px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: var(--primary-dark);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                min-height: auto;
+            }
+
+            .availability-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-page {
+                padding: 70px 0 85px;
+            }
+
+            .contact-intro {
+                margin-bottom: 42px;
+            }
+
+            .contact-intro h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .contact-intro p {
+                font-size: 14px;
+            }
+
+            .contact-card {
+                padding: 26px;
+            }
+        }
+
+        /* Resume Section */
+        .resume-section {
+            text-align: center;
+            padding: 45px 25px;
+            margin: 45px auto;
+            max-width: 760px;
+            background: #f5f8ff;
+            border: 1px solid #e4eaff;
+            border-radius: 24px;
+        }
+
+        .resume-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #172033;
+        }
+
+        .resume-section p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .resume-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .resume-buttons .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .resume-section {
+                padding: 30px 18px;
+            }
+
+            .resume-buttons {
+                flex-direction: column;
+            }
+
+            .resume-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <a href="index.html" class="logo">
+            adlin<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="contact.html" class="active" aria-current="page">Contact</a>
+        </div>
+
+        <a href="mailto:adlinauji@gmail.com" class="nav-button">
+            Let's Connect ↗
+        </a>
+
+    </nav>
+</header>
+
+<main>
+
+    <section class="contact-page">
+
+        <div class="container">
+
+            <!-- INTRODUCTION -->
+
+            <div class="contact-intro">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h1>
+                    Let's build something
+                    <span>together</span>
+                </h1>
+
+                <p>
+                    I'm always open to connecting with developers,
+                    learning from industry professionals and exploring
+                    opportunities in software development.
+                    Feel free to reach out!
+                </p>
+
+            </div>
+
+            <!-- CONTACT CARDS -->
+
+            <div class="contact-grid">
+
+                <!-- EMAIL -->
+
+                <article class="contact-card">
+
+                    <div class="contact-icon" aria-hidden="true">
+                        ✉
+                    </div>
+
+                    <h2>Email Me</h2>
+
+                    <p>
+                        For internship opportunities,
+                        collaborations or professional enquiries.
+                    </p>
+
+                    <a href="mailto:adlinauji@gmail.com">
+                        adlinauji@gmail.com ↗
+                    </a>
+
+                </article>
+
+                <!-- GITHUB -->
+
+                <article class="contact-card">
+
+                    <div class="contact-icon" aria-hidden="true">
+                        &lt;/&gt;
+                    </div>
+
+                    <h2>GitHub</h2>
+
+                    <p>
+                        Explore my repositories,
+                        development projects and
+                        technical work.
+                    </p>
+
+                    <a href="https://github.com/Edwolfhard"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        github.com/Edwolfhard ↗
+                    </a>
+
+                </article>
+
+                <!-- LINKEDIN -->
+
+                <article class="contact-card">
+
+                    <div class="contact-icon" aria-hidden="true">
+                        in
+                    </div>
+
+                    <h2>LinkedIn</h2>
+
+                    <p>
+                        Connect with me professionally
+                        and follow my journey in
+                        software development.
+                    </p>
+
+                    <a href="https://www.linkedin.com/in/adlin-zulkarnain-91457a423"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View LinkedIn Profile ↗
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- Resume Section -->
+            <section class="resume-section">
+                <h2>Want to know more about me?</h2>
+                <p>Explore my resume to learn more about my education, technical skills, and projects.</p>
+
+                <div class="resume-buttons">
+                    <a href="Adlin_Zulkarnain_Resume.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">
+                        View My Resume ↗
+                    </a>
+
+                    <a href="Adlin_Zulkarnain_Resume.pdf"
+                       download
+                       class="btn btn-outline">
+                        Download Resume ↓
+                    </a>
+                </div>
+            </section>
+
+            <!-- INTERNSHIP AVAILABILITY -->
+
+            <div class="availability-card">
+
+                <div>
+
+                    <span class="section-label">
+                        CURRENT AVAILABILITY
+                    </span>
+
+                    <h2>
+                        Open to Internship Opportunities
+                    </h2>
+
+                    <p>
+                        I'm seeking opportunities to gain hands-on
+                        industry experience in software engineering,
+                        full-stack development, backend systems
+                        and related technology roles.
+                    </p>
+
+                    <span class="availability-date">
+                        8 March – 8 July 2027
+                    </span>
+
+                </div>
+
+                <a href="mailto:adlinauji@gmail.com"
+                   class="btn btn-primary">
+                    Contact Me ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+                adlin<span>.</span>
+            </a>
+
+            <p>
+                Built with curiosity, creativity and code.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="hobbies.html">Hobbies</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="https://github.com/Edwolfhard"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 Nur Adlin Auji.
+            All rights reserved.
+        </p>
+
+        <p>
+            Made with HTML, CSS &amp; JavaScript.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

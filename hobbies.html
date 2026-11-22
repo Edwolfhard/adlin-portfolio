@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hobbies | Nur Adlin Auji</title>
+
+    <meta name="description"
+          content="Explore the hobbies and personal interests of Nur Adlin Auji, including gaming, technology, movies and music.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           HOBBIES PAGE — MODERN BENTO GRID
+           ========================================= */
+
+        .hobbies-page {
+            padding: 95px 0 115px;
+        }
+
+        .hobbies-intro {
+            max-width: 760px;
+            margin: 0 auto 65px;
+            text-align: center;
+        }
+
+        .hobbies-intro h1 {
+            margin: 15px 0 20px;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.12;
+            letter-spacing: -3px;
+            font-weight: 800;
+        }
+
+        .hobbies-intro h1 span {
+            color: var(--primary);
+        }
+
+        .hobbies-intro p {
+            max-width: 590px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* HOBBY GRID */
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-auto-rows: minmax(205px, auto);
+            gap: 20px;
+        }
+
+        .hobby-card {
+            position: relative;
+            overflow: hidden;
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            background: white;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hobby-label {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .hobby-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 66px;
+            height: 66px;
+            margin-bottom: 22px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            font-size: 30px;
+        }
+
+        .hobby-card h2 {
+            margin-bottom: 12px;
+            font-size: 25px;
+            line-height: 1.25;
+            letter-spacing: -0.8px;
+        }
+
+        .hobby-card p {
+            max-width: 390px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        /* INDIVIDUAL CARDS */
+
+        .hobby-gaming {
+            grid-column: span 2;
+            grid-row: span 2;
+            min-height: 430px;
+            background: #eaf0ff;
+        }
+
+        .hobby-gaming h2 {
+            font-size: 36px;
+        }
+
+        .hobby-gaming .hobby-icon {
+            width: 90px;
+            height: 90px;
+            font-size: 43px;
+        }
+
+        .gaming-decoration {
+            position: absolute;
+            right: -25px;
+            bottom: -55px;
+            font-size: 180px;
+            opacity: 0.14;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        .hobby-movies {
+            grid-column: span 1;
+            background: #fff1e5;
+        }
+
+        .hobby-music {
+            grid-column: span 1;
+            background: #f3eaff;
+        }
+
+        .hobby-creative {
+            grid-column: span 2;
+            background: #e9f8f1;
+        }
+
+        .hobby-technology {
+            grid-column: span 2;
+            background: #ffffff;
+        }
+
+        .hobby-learning {
+            grid-column: span 2;
+            background: #fff8e5;
+        }
+
+        /* BOTTOM MESSAGE */
+
+        .hobbies-note {
+            margin-top: 60px;
+            padding: 42px;
+            border: 1px solid #dce6ff;
+            border-radius: 28px;
+            background: #eaf0ff;
+            text-align: center;
+        }
+
+        .hobbies-note h2 {
+            margin-bottom: 12px;
+            font-size: 27px;
+            letter-spacing: -0.7px;
+        }
+
+        .hobbies-note p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .hobby-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hobby-gaming {
+                grid-column: span 2;
+                grid-row: span 1;
+                min-height: 320px;
+            }
+
+            .hobby-movies,
+            .hobby-music {
+                grid-column: span 1;
+            }
+
+            .hobby-creative,
+            .hobby-technology,
+            .hobby-learning {
+                grid-column: span 2;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+            .hobbies-page {
+                padding: 70px 0 85px;
+            }
+
+            .hobbies-intro {
+                margin-bottom: 42px;
+            }
+
+            .hobbies-intro h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .hobbies-intro p {
+                font-size: 14px;
+            }
+
+            .hobby-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .hobby-gaming,
+            .hobby-movies,
+            .hobby-music,
+            .hobby-creative,
+            .hobby-technology,
+            .hobby-learning {
+                grid-column: 1;
+                grid-row: auto;
+                min-height: auto;
+            }
+
+            .hobby-card {
+                padding: 27px;
+            }
+
+            .hobby-gaming {
+                min-height: 300px;
+            }
+
+            .gaming-decoration {
+                font-size: 125px;
+                bottom: -30px;
+            }
+
+            .hobbies-note {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="site-header">
+
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <a href="index.html" class="logo">
+            adlin<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="hobbies.html" class="active" aria-current="page">Hobbies</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <a href="contact.html" class="nav-button">
+            Let's Connect ↗
+        </a>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="hobbies-page">
+
+        <div class="container">
+
+            <!-- INTRO -->
+
+            <div class="hobbies-intro">
+
+                <span class="section-label">
+                    OUTSIDE THE TERMINAL
+                </span>
+
+                <h1>
+                    Beyond the
+                    <span>code</span>
+                </h1>
+
+                <p>
+                    When I'm not working on projects or learning
+                    something new, I enjoy exploring different
+                    interests that keep me creative, curious
+                    and inspired.
+                </p>
+
+            </div>
+
+            <!-- BENTO GRID -->
+
+            <div class="hobby-grid">
+
+                <!-- GAMING -->
+
+                <article class="hobby-card hobby-gaming">
+
+                    <span class="hobby-label">GAMING</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        🎮
+                    </div>
+
+                    <h2>
+                        Exploring virtual worlds.
+                    </h2>
+
+                    <p>
+                        Gaming is one of my favourite ways
+                        to unwind. I enjoy exploring different
+                        game worlds, discovering new mechanics
+                        and experiencing interactive storytelling.
+                    </p>
+
+                    <span class="gaming-decoration" aria-hidden="true">
+                        🎮
+                    </span>
+
+                </article>
+
+                <!-- MOVIES -->
+
+                <article class="hobby-card hobby-movies">
+
+                    <span class="hobby-label">ENTERTAINMENT</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        🎬
+                    </div>
+
+                    <h2>Movies &amp; Series</h2>
+
+                    <p>
+                        I enjoy watching movies and
+                        television series, especially
+                        stories with interesting
+                        characters and creative plots.
+                    </p>
+
+                </article>
+
+                <!-- MUSIC -->
+
+                <article class="hobby-card hobby-music">
+
+                    <span class="hobby-label">MUSIC</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        🎧
+                    </div>
+
+                    <h2>Music</h2>
+
+                    <p>
+                        Music is part of my everyday
+                        routine, whether I'm relaxing,
+                        studying or working on
+                        personal projects.
+                    </p>
+
+                </article>
+
+                <!-- CREATIVE PROJECTS -->
+
+                <article class="hobby-card hobby-creative">
+
+                    <span class="hobby-label">CREATIVITY</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        ✨
+                    </div>
+
+                    <h2>Creative Projects</h2>
+
+                    <p>
+                        I enjoy experimenting with creative
+                        ideas, digital content and visual
+                        concepts that allow me to explore
+                        new ways of expressing ideas.
+                    </p>
+
+                </article>
+
+                <!-- TECHNOLOGY -->
+
+                <article class="hobby-card hobby-technology">
+
+                    <span class="hobby-label">TECHNOLOGY</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        💻
+                    </div>
+
+                    <h2>Exploring Technology</h2>
+
+                    <p>
+                        I like discovering new software tools,
+                        experimenting with web technologies
+                        and understanding how different
+                        applications are built.
+                    </p>
+
+                </article>
+
+                <!-- LEARNING -->
+
+                <article class="hobby-card hobby-learning">
+
+                    <span class="hobby-label">PERSONAL GROWTH</span>
+
+                    <div class="hobby-icon" aria-hidden="true">
+                        📚
+                    </div>
+
+                    <h2>Learning New Skills</h2>
+
+                    <p>
+                        I enjoy expanding my knowledge
+                        beyond coursework, whether it's
+                        learning a new development tool,
+                        improving my technical skills
+                        or exploring a new interest.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- BOTTOM NOTE -->
+
+            <div class="hobbies-note">
+
+                <h2>
+                    Always curious. Always exploring.
+                </h2>
+
+                <p>
+                    My interests help me stay creative,
+                    adaptable and open to new experiences,
+                    both inside and outside technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+                adlin<span>.</span>
+            </a>
+
+            <p>
+                Built with curiosity, creativity and code.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="contact.html">Contact</a>
+
+            <a href="https://github.com/Edwolfhard"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+
+        <p>
+            &copy; 2026 Nur Adlin Auji.
+            All rights reserved.
+        </p>
+
+        <p>
+            Made with HTML, CSS &amp; JavaScript.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
